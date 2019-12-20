@@ -25,7 +25,7 @@ public class foodtabledemo extends foodone{
 	  
 	  
 
-	  
+	  //
 	  
 	  
 	  //使用者觀看的擺設視窗

@@ -168,7 +168,7 @@ public  class newtable  extends foodone{
          	    }
     	 return tabletotalStr;
      }
-    //--------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------------//
      
      public String[] sumtabletotal(String tabletotal) //將桌位數字字串轉為陣列
      {

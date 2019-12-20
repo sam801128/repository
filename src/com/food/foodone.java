@@ -122,7 +122,7 @@ public class foodone {
 		        	   System.out.println("��鞈�澈憭望��");
 		             }
 		         
-		         return "123";
+		         return "";
 		          
       }
 

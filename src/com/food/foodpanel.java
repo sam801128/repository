@@ -17,6 +17,7 @@ public class foodpanel extends JPanel {
 		 g.fillRect(25, 75, 850, 600);
 		//³]¸m¼ÐÃD
 		 title.paintIcon(this,g,25,11);
+		 //
          
 	}
 	
