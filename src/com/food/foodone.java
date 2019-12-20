@@ -19,7 +19,7 @@ public class foodone {
 	public static void main (String[] args) {
 	    
 		try {  
-	        Class.forName("com.mysql.cj.jdbc.Driver");     //加载MYSQL JDBC驱动程序     
+	        Class.forName("com.mysql.cj.jdbc.Driver");     //��蝸MYSQL JDBC撽勗蝔��     
 	        //Class.forName("org.gjt.mm.mysql.Driver");  
 	       System.out.println("Success loading Mysql Driver!");  
 	      }  
@@ -30,7 +30,7 @@ public class foodone {
 	      try {  
 	            connect = DriverManager.getConnection(  
 	            "jdbc:mysql://localhost:3306/food?serverTimezone=UTC","libar","m2569758");  
-	             //连接URL为   jdbc:mysql//服务器地址/数据库名  ，后面的2个参数分别是登陆用户名和密码 必须自定义  
+	             //餈URL銝�   jdbc:mysql//������/��摨��  嚗����2銝芸�������������� 敹◆�摰��  
 	    
 	        System.out.println("Success connect MySql server!");
 	        stmt = connect.createStatement();  
@@ -40,9 +40,9 @@ public class foodone {
 	                                                                
 	        while (rs.next()) {
 	        	
-	          System.out.println(rs.getString("帳號"));  
-	          System.out.println(rs.getString("密碼"));
-	          System.out.println(rs.getString("擺設狀況"));
+	          System.out.println(rs.getString("撣唾��"));  
+	          System.out.println(rs.getString("撖Ⅳ"));
+	          System.out.println(rs.getString("�閮剔�瘜�"));
 	        }  
 	      }  
 	      catch (Exception e) {  
@@ -52,18 +52,18 @@ public class foodone {
 	      
 
 //-------------------------------------------------------------------------------------------------------		
-		//詢問使用者需要多少座位
+		//閰Ｗ�蝙���閬��漣雿�
 	      
 	   
 	   
-	   JFrame frameq = new JFrame("餐廳規模設定");
+	   JFrame frameq = new JFrame("擗輒閬芋閮剖��");
 	   frameq.setBounds(600, 300, 500, 100);
 	   frameq.setResizable(false);
 	   frameq.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	  
 	   
 	   frameq.setLayout(null);
-	   JButton q1=new JButton("確定座位數");
+	   JButton q1=new JButton("蝣箏�漣雿");
 	   q1.setBounds(380, 10, 100, 50);
 
 	   
@@ -78,16 +78,16 @@ public class foodone {
 	  
 	  
 	   
-	   q1.addActionListener(new ActionListener() { //Q1按鈕事件啟動時做!
+	   q1.addActionListener(new ActionListener() { //Q1����辣������!
    
            public void actionPerformed(ActionEvent e) {
  
         	  
-        	   if(jt.getText().equals("大")){
-        	   frameq.setVisible(false);//關閉窗口
+        	   if(jt.getText().equals("憭�")){
+        	   frameq.setVisible(false);//����
         	   newtable newtable = new newtable(176);
-        	   }else if(jt.getText().equals("小")){
-        	    frameq.setVisible(false);//關閉窗口
+        	   }else if(jt.getText().equals("撠�")){
+        	    frameq.setVisible(false);//����
         	   newtable newtable = new newtable(10);
         	   }
         		   
@@ -98,12 +98,12 @@ public class foodone {
 	   public void inputable(String sumtabletotalStr){
 	         try
 	             {
-	               stmt.executeUpdate("UPDATE foodtable set 擺設狀況 = '"+sumtabletotalStr+"' where sn = '1' AND 帳號 = 'Zad' AND 密碼 = 'Ali'");
-	               System.out.println("新增成功");
+	               stmt.executeUpdate("UPDATE foodtable set �閮剔�瘜� = '"+sumtabletotalStr+"' where sn = '1' AND 撣唾�� = 'Zad' AND 撖Ⅳ = 'Ali'");
+	               System.out.println("�憓���");
 	             }
 	         catch (Exception e) 
 	             { 
-	        	   System.out.println("傳入資料庫失敗");
+	        	   System.out.println("��鞈�澈憭望��");
 	             }
 	         
 	   }
@@ -111,18 +111,18 @@ public class foodone {
 	   public  String selecttable(){
 		         try
 		             {
-		        	   ResultSet rs = stmt.executeQuery("select 擺設狀況  from foodtable  where sn = '1' AND 帳號 = 'Zad' AND 密碼 = 'Ali'");
+		        	   ResultSet rs = stmt.executeQuery("select �閮剔�瘜�  from foodtable  where sn = '1' AND 撣唾�� = 'Zad' AND 撖Ⅳ = 'Ali'");
 		        	   while (rs.next()){
-		        	   String selecttable =  rs.getString("擺設狀況");
+		        	   String selecttable =  rs.getString("�閮剔�瘜�");
 		        	   return selecttable;
 		        	   }
 		             }
 		         catch (Exception e) 
 		             { 
-		        	   System.out.println("傳入資料庫失敗");
+		        	   System.out.println("��鞈�澈憭望��");
 		             }
 		         
-		         return "";
+		         return "123";
 		          
       }
 
